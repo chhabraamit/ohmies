@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -25,49 +24,50 @@ var ohmPriceUrl = "https://api.coingecko.com/api/v3/simple/price?ids=Olympus&vs_
 // ohmies -w <address> -klima
 // ohmies -w <address>
 func main() {
-	var showKlima = flag.Bool("klima", false, "show klima value")
-	var walletAddressPtr = flag.String("w", "", "wallet address")
-	flag.Parse()
-	//fmt.Printf("show klima: %v\n", *showKlima)
-
-	//walletAddress = os.Args[1]
-	fmt.Printf("walletAddress: %v\n", *walletAddressPtr)
-	walletAddress = *walletAddressPtr
-	isKlima = *showKlima
-	initUrls()
+	//var showKlima = flag.Bool("klima", false, "show klima value")
+	//var walletAddressPtr = flag.String("w", "", "wallet address")
+	//flag.Parse()
+	////fmt.Printf("show klima: %v\n", *showKlima)
+	//
+	////walletAddress = os.Args[1]
+	//fmt.Printf("walletAddress: %v\n", *walletAddressPtr)
+	//walletAddress = *walletAddressPtr
+	//isKlima = *showKlima
+	//initUrls()
+	//
+	//sOhm := getSOhm()
+	//var name = "Ohm"
+	//if isKlima{
+	//	name="Klaima"
+	//}
+	//fmt.Printf("current%v: %v\n",name, sOhm)
+	//
+	//ohmPrice := getOhmPrice()
+	//fmt.Printf("%vPrice: %v\n", name, ohmPrice)
+	//
+	//stakedOhms, startingDate := getStakedOhms()
+	//fmt.Printf("invested%vs: %v\n", name,stakedOhms)
+	//
+	//fmt.Printf("investedPrice: %v\n", stakedOhms * ohmPrice)
+	//
+	//ohmGain := sOhm - stakedOhms
+	//fmt.Printf("gain in %v: %v\n",name, ohmGain)
+	//
+	//fmt.Printf("current USD assets: %v\n", sOhm * ohmPrice)
+	//gains := ohmGain * ohmPrice
+	//fmt.Printf("gain in USD: %v\n", gains)
+	//
+	//fmt.Println()
+	//
+	//fmt.Printf("started at: %v\n", startingDate)
+	//
+	//now := time.Now()
+	//days := int(now.Sub(startingDate).Hours()) / (24)
+	//fmt.Printf("total days staked: %v\n", days)
+	//fmt.Printf("per day gain (in USD): %v\n", gains/(float64(days)))
 
 	sOhm := getSOhm()
-	var name = "Ohm"
-	if isKlima{
-		name="Klaima"
-	}
-	fmt.Printf("current%v: %v\n",name, sOhm)
-
-	ohmPrice := getOhmPrice()
-	fmt.Printf("%vPrice: %v\n", name, ohmPrice)
-
-	stakedOhms, startingDate := getStakedOhms()
-	fmt.Printf("invested%vs: %v\n", name,stakedOhms)
-
-	fmt.Printf("investedPrice: %v\n", stakedOhms * ohmPrice)
-
-	ohmGain := sOhm - stakedOhms
-	fmt.Printf("gain in %v: %v\n",name, ohmGain)
-
-	fmt.Printf("current USD assets: %v\n", sOhm * ohmPrice)
-	gains := ohmGain * ohmPrice
-	fmt.Printf("gain in USD: %v\n", gains)
-
-	fmt.Println()
-
-	fmt.Printf("started at: %v\n", startingDate)
-
-	now := time.Now()
-	days := int(now.Sub(startingDate).Hours()) / (24)
-	fmt.Printf("total days staked: %v\n", days)
-	fmt.Printf("per day gain (in USD): %v\n", gains/(float64(days)))
-
-
+	fmt.Printf("time: %v, sohm: %v\n", time.Now(), sOhm)
 }
 
 func initUrls() {
