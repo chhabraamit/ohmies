@@ -68,6 +68,10 @@ func main() {
 
 	sOhm := getSOhm()
 	fmt.Printf("time: %v, sohm: %v\n", time.Now(), sOhm)
+	isKlima = true
+	initUrls()
+	sOhm = getSOhm()
+	fmt.Printf("time: %v, sohm: %v\n", time.Now(), sOhm)
 }
 
 func initUrls() {
